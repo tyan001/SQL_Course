@@ -1,0 +1,1 @@
+docker run --name postgres --network pg_network -e POSTGRES_PASSWORD=root -e POSTGRES_USER=postgres -e POSTGRES_DB=mydb -p 5432:5432 -v sql_volume:/root/workspace -d postgres:latest
