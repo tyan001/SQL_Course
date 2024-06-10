@@ -7,4 +7,5 @@
 -- Question 1: How many towns are there in france?
 -- Table: Towns
 
-SELECT count(id) AS "Total Towns" FROM towns;
+SELECT COUNT(id) AS "Total Towns"
+FROM towns;

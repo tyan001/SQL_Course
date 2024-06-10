@@ -9,7 +9,7 @@
 -- Table: countrylanguage
 SELECT COUNT(language) AS "Official Languages"
 FROM countrylanguage
-WHERE isofficial = true;
+WHERE isofficial = TRUE;
 
 -- Question 2: What is the average life expectancy in the world?
 -- Table: country
@@ -22,11 +22,32 @@ SELECT AVG(population) AS "Average Population"
 FROM country
 WHERE name = 'Netherlands';
 
-select AVG(population)
-from city
-where countrycode = 'NLD';
+SELECT AVG(population)
+FROM city
+WHERE countrycode = 'NLD';
+
+
 /*
- asda
- asdasd
- asdasd
- */
+* DB: World
+* Table: city
+* Question: How many cities are in the district of Zuid-Holland, Noord-Brabant and Utrecht?
+*/
+
+SELECT *
+FROM city
+WHERE district IN ('Zuid-Holland', 'Noord-Brabant', 'Utrecht');
+
+SELECT COUNT(*)
+FROM city
+WHERE district IN ('Zuid-Holland', 'Noord-Brabant', 'Utrecht');
+
+/*
+* DB: World
+* Table: country
+* Question: Can I get a list of distinct life expectancy ages
+* Make sure there are no nulls
+*/
+
+SELECT DISTINCT lifeexpectancy
+FROM country
+where lifeexpectancy is not NULL;
